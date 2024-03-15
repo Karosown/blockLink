@@ -69,5 +69,8 @@ func (this *MerkalNode) Valid(other *MerkalNode, oldData *[]Message, newData *[]
 	if !b2 {
 		return node, b2
 	}
+	if b && b2 && !this.Equals(other) {
+		return nil, false
+	}
 	return nil, true
 }
